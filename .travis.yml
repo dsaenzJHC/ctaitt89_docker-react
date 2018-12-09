@@ -3,16 +3,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t chris/docker-react -f Dockerfile.dev .
+  - docker build -t dsaenzjhc/ctaitt89_docker-react -f Dockerfile.dev .
 
 script:
-  - docker run chris/docker-react npm run test -- --coverage
+  - docker run dsaenzjhc/ctaitt89_docker-react npm run test -- --coverage
 
 deploy: 
   provider: elasticbeanstalk 
   region: "us-east-1"
   app: "docker-react"
-  env: "DockerReact-env"
+  env: "DockerReact-env-1"
   bucket_name: "elasticbeanstalk-us-east-1-663432637386"
   bucket_path: "docker-react"
   on:
